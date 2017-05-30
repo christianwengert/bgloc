@@ -113,7 +113,10 @@ extension ViewController: CLLocationManagerDelegate {
         
         print(String(format: "%@ @ %@ with %f\n", isForeground ? "fg" : "bg", mostRecentLocation, dm.x))
         
-        if self.locations.count % 30 == 0 && !isForeground{
+        
+        
+        if self.locations.count % 10 == 0 && !isForeground{
+            AudioServicesPlayAlertSound(SystemSoundID(1000))
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
         
